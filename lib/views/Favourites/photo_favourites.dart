@@ -4,7 +4,7 @@ import 'package:multimedia_app/models/photos.dart';
 import 'package:multimedia_app/providers/favourites_provides.dart';
 import 'package:multimedia_app/utils/colors.dart';
 import 'package:multimedia_app/utils/constants.dart';
-import 'package:multimedia_app/widgets/photos/image_card.dart';
+import 'package:multimedia_app/widgets/photos/photo_card.dart';
 import 'package:provider/provider.dart';
 
 class FavouritePhotos extends StatelessWidget {
@@ -37,7 +37,7 @@ class FavouritePhotos extends StatelessWidget {
                   crossAxisCount: 2, crossAxisSpacing: 3, mainAxisSpacing: 3, childAspectRatio: 4 / 5),
               itemBuilder: (context, index) {
                 Photo photo = favouriteProvider.photosList[index];
-                return ImageCard(
+                return PhotoCard(
                   photo: photo,
                   onTapHeart: () => null,
                 );

@@ -5,7 +5,7 @@ import 'package:multimedia_app/models/videos.dart';
 import 'package:multimedia_app/providers/favourites_provides.dart';
 import 'package:multimedia_app/utils/colors.dart';
 import 'package:multimedia_app/utils/constants.dart';
-import 'package:multimedia_app/widgets/photos/image_card.dart';
+import 'package:multimedia_app/widgets/photos/photo_card.dart';
 import 'package:multimedia_app/widgets/videos/video_card.dart';
 import 'package:provider/provider.dart';
 

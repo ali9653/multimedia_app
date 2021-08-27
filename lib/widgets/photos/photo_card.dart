@@ -5,11 +5,11 @@ import 'package:multimedia_app/models/photos.dart';
 import 'package:multimedia_app/utils/colors.dart';
 import 'package:multimedia_app/utils/constants.dart';
 
-class ImageCard extends StatelessWidget {
+class PhotoCard extends StatelessWidget {
   final Photo photo;
   final VoidCallback onTapHeart;
 
-  const ImageCard({Key? key, required this.photo, required this.onTapHeart}) : super(key: key);
+  const PhotoCard({Key? key, required this.photo, required this.onTapHeart}) : super(key: key);
 
   Widget _imageCard() {
     return ClipRRect(

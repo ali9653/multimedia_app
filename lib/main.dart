@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:multimedia_app/providers/favourites_provides.dart';
 import 'package:multimedia_app/providers/home_provider.dart';
-import 'package:multimedia_app/providers/photo_provider/photos_provider.dart';
+import 'package:multimedia_app/providers/photo_provider/photo_provider.dart';
 import 'package:multimedia_app/providers/video_provider/video_provider.dart';
 import 'package:multimedia_app/views/home_view.dart';
 import 'package:provider/provider.dart';

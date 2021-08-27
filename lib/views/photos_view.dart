@@ -1,25 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:multimedia_app/models/photos.dart';
-import 'package:multimedia_app/providers/photo_provider/photos_provider.dart';
+import 'package:multimedia_app/providers/photo_provider/photo_provider.dart';
 import 'package:multimedia_app/utils/colors.dart';
 import 'package:multimedia_app/utils/constants.dart';
 import 'package:multimedia_app/utils/custom_header_footer.dart';
 import 'package:multimedia_app/widgets/offline_card.dart';
-import 'package:multimedia_app/widgets/photos/image_card.dart';
+import 'package:multimedia_app/widgets/photos/photo_card.dart';
 import 'package:multimedia_app/widgets/photos/loading_placeholder_images.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:skeleton_text/skeleton_text.dart';
 
-class ImagesView extends StatefulWidget {
-  const ImagesView({Key? key}) : super(key: key);
+class PhotosView extends StatefulWidget {
+  const PhotosView({Key? key}) : super(key: key);
 
   @override
-  _ImagesViewState createState() => _ImagesViewState();
+  _PhotosViewState createState() => _PhotosViewState();
 }
 
-class _ImagesViewState extends State<ImagesView> {
+class _PhotosViewState extends State<PhotosView> {
   late Future _photosFuture;
 
   @override
@@ -64,7 +64,7 @@ class _ImagesViewState extends State<ImagesView> {
                             crossAxisCount: 2, crossAxisSpacing: 3, mainAxisSpacing: 3, childAspectRatio: 4 / 5),
                         itemBuilder: (context, index) {
                           Photo photo = photoProvider.photosList[index];
-                          return ImageCard(
+                          return PhotoCard(
                             photo: photo,
                             onTapHeart: () => photoProvider.likeUnlike(index,context),
                           );

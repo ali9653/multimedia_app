@@ -14,6 +14,7 @@ class LoadingPlaceHolderImages extends StatelessWidget {
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 3, mainAxisSpacing: 3, childAspectRatio: 4 / 5),
         itemBuilder: (context, index) {
           return Card(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
             color: Colors.grey.shade700,
             elevation: 10,
             child: Stack(

@@ -11,21 +11,8 @@ import 'package:multimedia_app/widgets/photos/photo_card.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class PhotosView extends StatefulWidget {
+class PhotosView extends StatelessWidget {
   const PhotosView({Key? key}) : super(key: key);
-
-  @override
-  _PhotosViewState createState() => _PhotosViewState();
-}
-
-class _PhotosViewState extends State<PhotosView> {
-  late Future _photosFuture;
-
-  @override
-  void initState() {
-    _photosFuture = Provider.of<PhotosProvider>(context, listen: false).fetchPhotos();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +22,7 @@ class _PhotosViewState extends State<PhotosView> {
           appBar: commonAppbar("Photographs"),
           backgroundColor: scaffoldColor,
           body: FutureBuilder(
-              future: _photosFuture,
+              future: photoProvider.photosFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return LoadingPlaceHolderImages();
@@ -72,3 +59,4 @@ class _PhotosViewState extends State<PhotosView> {
     );
   }
 }
+

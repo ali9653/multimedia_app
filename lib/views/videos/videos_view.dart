@@ -12,21 +12,8 @@ import 'package:multimedia_app/widgets/videos/video_card.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class VideosView extends StatefulWidget {
+class VideosView extends StatelessWidget {
   const VideosView({Key? key}) : super(key: key);
-
-  @override
-  _VideosViewState createState() => _VideosViewState();
-}
-
-class _VideosViewState extends State<VideosView> {
-  late Future _videosFuture;
-
-  @override
-  void initState() {
-    _videosFuture = Provider.of<VideosProvider>(context, listen: false).fetchVideos();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +23,7 @@ class _VideosViewState extends State<VideosView> {
           appBar: commonAppbar("Videos"),
           backgroundColor: scaffoldColor,
           body: FutureBuilder(
-              future: _videosFuture,
+              future: videoProvider.videosFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return LoadingPlaceholderVideo();

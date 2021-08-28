@@ -8,8 +8,13 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class PhotosProvider with ChangeNotifier {
   List<Photo> photosList = <Photo>[];
+  late Future photosFuture;
   RefreshController loadMoreController = RefreshController(initialRefresh: false);
   var page = 1;
+
+  PhotosProvider () {
+    photosFuture = this.fetchPhotos();
+  }
 
   // fetch all photos from api
   Future<List<Photo>> fetchPhotos() async {

@@ -8,15 +8,19 @@ import '../favourites_provides.dart';
 
 class VideosProvider with ChangeNotifier {
   List<Video> videosList = <Video>[];
+  late Future videosFuture;
   RefreshController loadMoreController = RefreshController(initialRefresh: false);
   var page = 1;
+
+  VideosProvider () {
+    videosFuture = this.fetchVideos();
+  }
 
   // fetch all videos from api
   Future<List<Video>> fetchVideos() async {
     List<Video>? videos = await ApiService.getVideos(page);
     if (videos!.isNotEmpty) {
       this.videosList = videos;
-      print(videosList.length.toString() + " video length");
       return videosList;
     } else {
       return <Video>[];

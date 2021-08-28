@@ -29,16 +29,16 @@ class ApiService {
   // fetch photos
   static Future<List<Photo>?> getPhotos(int page) async {
     try {
-      var response = await http.get(Uri.parse("${_photosBaseURL}per_page=21&page=$page"), headers: {"Authorization": _authorizationKey});
+      var response = await http.get(Uri.parse("${_photosBaseURL}per_page=14&page=$page"), headers: {"Authorization": _authorizationKey});
       if (response.statusCode == 200) {
-        print("got photos");
+        //print("got photos");
         return getPhotosList(response.body);
       } else {
-        print("no photos");
+        //print("no photos");
         return <Photo>[];
       }
     } on SocketException {
-      print("no internet");
+     // print("no internet");
       return null;
     }
   }
@@ -48,14 +48,14 @@ class ApiService {
     try {
       var response = await http.get(Uri.parse("${_videosBaseURL}per_page=15&page=$page"), headers: {"Authorization": _authorizationKey});
       if (response.statusCode == 200) {
-        print("got videos");
+       // print("got videos");
         return getVideosList(response.body);
       } else {
-        print("no videos");
+       // print("no videos");
         return <Video>[];
       }
     } on SocketException {
-      print("no internet");
+      //print("no internet");
       return null;
     }
   }

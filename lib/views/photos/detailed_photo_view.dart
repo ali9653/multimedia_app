@@ -20,19 +20,6 @@ class DetailedPhotoView extends StatelessWidget {
     );
   }
 
-  Widget _divider() {
-    return Container(
-      decoration: new BoxDecoration(
-        color: shadowColor,
-        borderRadius: BorderRadius.all(Radius.circular(5)),
-        shape: BoxShape.rectangle,
-      ),
-      margin: EdgeInsets.symmetric(vertical: 25),
-      height: 4,
-      width: ScreenUtils.deviceWidth(15),
-    );
-  }
-
   Widget _actionListTile(String title, String subtitle, VoidCallback onTap) {
     return ListTile(
       dense: true,

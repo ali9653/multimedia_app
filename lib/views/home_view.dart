@@ -9,15 +9,8 @@ import 'package:provider/provider.dart';
 
 import 'Favourites/favourites_view.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
-
-  @override
-  _HomeViewState createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
-
 
   BottomNavigationBarItem _bottomButton(IconData iconData, String label) {
     return BottomNavigationBarItem(
@@ -29,18 +22,13 @@ class _HomeViewState extends State<HomeView> {
   }
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Consumer<HomeProvider>(
       builder: (
-        BuildContext ctx,
-        homeProvider,
-        Widget? child,
-      ) {
+          BuildContext ctx,
+          homeProvider,
+          Widget? child,
+          ) {
         return WillPopScope(
           onWillPop: () async {
             if (homeProvider.currentIndex != 0) {

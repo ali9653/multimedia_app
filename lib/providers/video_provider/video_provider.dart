@@ -12,7 +12,7 @@ class VideosProvider with ChangeNotifier {
   RefreshController loadMoreController = RefreshController(initialRefresh: false);
   var page = 1;
 
-  VideosProvider () {
+  VideosProvider() {
     videosFuture = this.fetchVideos();
   }
 
@@ -28,14 +28,13 @@ class VideosProvider with ChangeNotifier {
   }
 
   // add or remove a video from favourite videos
-  void addOrRemoveFromFavourites (bool val, BuildContext context, Video video) {
+  void addOrRemoveFromFavourites(bool val, BuildContext context, Video video) {
     var favouritesProvider = Provider.of<FavouritesProvider>(context, listen: false).videosList;
-    if(val) {
+    if (val) {
       favouritesProvider.add(video);
     } else {
       favouritesProvider.remove(video);
     }
-
   }
 
   // tap to like or unlike a video

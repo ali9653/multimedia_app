@@ -11,6 +11,7 @@ class VideosProvider with ChangeNotifier {
   RefreshController loadMoreController = RefreshController(initialRefresh: false);
   var page = 1;
 
+  // fetch all videos from api
   Future<List<Video>> fetchVideos() async {
     List<Video>? videos = await ApiService.getVideos(page);
     if (videos!.isNotEmpty) {
@@ -22,7 +23,7 @@ class VideosProvider with ChangeNotifier {
     }
   }
 
-
+  // add or remove a video from favourite videos
   void addOrRemoveFromFavourites (bool val, BuildContext context, Video video) {
     var favouritesProvider = Provider.of<FavouritesProvider>(context, listen: false).videosList;
     if(val) {
@@ -33,12 +34,14 @@ class VideosProvider with ChangeNotifier {
 
   }
 
+  // tap to like or unlike a video
   void likeUnlike(int index, BuildContext context) {
     this.videosList[index].liked = !this.videosList[index].liked!;
     addOrRemoveFromFavourites(this.videosList[index].liked!, context, this.videosList[index]);
     notifyListeners();
   }
 
+  // pull down to refresh videos
   void refreshVideos() async {
     page = 0;
     List<Video>? videos = await ApiService.getVideos(page);
@@ -52,6 +55,7 @@ class VideosProvider with ChangeNotifier {
     }
   }
 
+  // load more videos (pagination)
   void loadMoreVideos() async {
     page++;
     List<Video>? videos = await ApiService.getVideos(page);

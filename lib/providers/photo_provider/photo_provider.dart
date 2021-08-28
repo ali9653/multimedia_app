@@ -11,6 +11,7 @@ class PhotosProvider with ChangeNotifier {
   RefreshController loadMoreController = RefreshController(initialRefresh: false);
   var page = 1;
 
+  // fetch all photos from api
   Future<List<Photo>> fetchPhotos() async {
     List<Photo>? photos = await ApiService.getPhotos(page);
     if (photos!.isNotEmpty) {
@@ -21,6 +22,7 @@ class PhotosProvider with ChangeNotifier {
     }
   }
 
+  // add or remove a photo from favourite photos
   void addOrRemoveFromFavourites (bool val, BuildContext context, Photo photo) {
     var favouritesProvider = Provider.of<FavouritesProvider>(context, listen: false).photosList;
     if(val) {
@@ -31,12 +33,15 @@ class PhotosProvider with ChangeNotifier {
 
   }
 
+  // tap to like or unlike a photo
   void likeUnlike(int index, BuildContext context) {
     this.photosList[index].liked = !this.photosList[index].liked!;
     addOrRemoveFromFavourites(this.photosList[index].liked!, context, this.photosList[index]);
     notifyListeners();
   }
 
+
+  // pull down to refresh photos
   void refreshPhotos() async {
     page = 0;
     List<Photo>? photos = await ApiService.getPhotos(page);
@@ -50,6 +55,7 @@ class PhotosProvider with ChangeNotifier {
     }
   }
 
+  // load more photos (pagination)
   void loadMorePhotos() async {
     page++;
     List<Photo>? photos = await ApiService.getPhotos(page);

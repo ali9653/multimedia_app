@@ -35,9 +35,11 @@ class FavouritesView extends StatelessWidget {
                   size: ScreenUtils.deviceWidth(30),
                   color: Colors.white,
                 ),
+
+                SizedBox(height: 5,),
                 Text(
                   title,
-                  style: whiteW500.copyWith(fontSize: ScreenUtils.fontSize(25)),
+                  style: whiteW500.copyWith(fontSize: ScreenUtils.fontSize(22)),
                 )
               ],
             ),

@@ -15,7 +15,7 @@
 
 <img src="https://github.com/ali9653/multimedia_app/blob/main/Screenshots/favourite_photos.jpg" alt="Top Headlines Screen" width="180" height="380"> <img src="https://github.com/ali9653/multimedia_app/blob/main/Screenshots/favourite_videos.jpg" alt="Top Headlines Screen" width="180" height="380"> <img src="https://github.com/ali9653/multimedia_app/blob/main/Screenshots/detailed_photo_view.jpg" alt="Top Headlines Screen" width="180" height="380">
 
-<img src="https://github.com/ali9653/multimedia_app/blob/main/Screenshots/video_player.jpg" alt="Top Headlines Screen" width="380" height="180">
+<img src="https://github.com/ali9653/multimedia_app/blob/main/Screenshots/video_player.jpg" alt="Top Headlines Screen" width="400" height="180">
 
 ## Install APK
 https://drive.google.com/drive/folders/1odB_0h7qXOz2iI-NzZana0cKRQsW5poE?usp=sharing

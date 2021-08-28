@@ -16,7 +16,6 @@ class DetailedPhotoView extends StatelessWidget {
     return Image(
       image: CachedNetworkImageProvider(photo.src!.large.toString()),
       fit: BoxFit.cover,
-      height: ScreenUtils.deviceHeight(35),
       width: ScreenUtils.deviceWidth(100),
     );
   }
@@ -36,6 +35,8 @@ class DetailedPhotoView extends StatelessWidget {
 
   Widget _actionListTile(String title, String subtitle, VoidCallback onTap) {
     return ListTile(
+      dense: true,
+      contentPadding: EdgeInsets.symmetric(horizontal: 10,vertical: 0),
       onTap: onTap,
       title: Text(
         title,
@@ -74,7 +75,7 @@ class DetailedPhotoView extends StatelessWidget {
           child: Column(
             children: [
               _imageCard(),
-              _divider(),
+             // _divider(),
               _actionListTile("Photographer", photo.photographer.toString(), () {}),
               _actionListTile("Photographer Profile", photo.photographerUrl.toString(), () {
                 _openLink(photo.photographerUrl.toString());

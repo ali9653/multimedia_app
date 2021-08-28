@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:multimedia_app/utils/colors.dart';
+import 'package:multimedia_app/utils/common_appbar.dart';
 import 'package:multimedia_app/utils/constants.dart';
 import 'package:multimedia_app/utils/screen_utils.dart';
 import 'package:multimedia_app/views/Favourites/photo_favourites.dart';
@@ -49,15 +50,7 @@ class FavouritesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 2,
-        brightness: Brightness.dark,
-        backgroundColor: scaffoldColor,
-        title: Text(
-          "Favourites",
-          style: whiteW500.copyWith(fontSize: 22),
-        ),
-      ),
+      appBar: commonAppbar("Favourites"),
       backgroundColor: scaffoldColor,
       body: Column(
         children: [

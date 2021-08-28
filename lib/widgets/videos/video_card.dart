@@ -5,6 +5,7 @@ import 'package:multimedia_app/models/videos.dart';
 import 'package:multimedia_app/utils/colors.dart';
 import 'package:multimedia_app/utils/constants.dart';
 import 'package:multimedia_app/utils/screen_utils.dart';
+import 'package:multimedia_app/views/videos/detailed_video_view.dart';
 
 class VideoCard extends StatelessWidget {
   final Video video;
@@ -82,13 +83,19 @@ class VideoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Card(
-        color: cardColor,
-        elevation: 10,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-        child: Column(
-          children: [_thumbnailCard(), _userCard()],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailedVideoView(videoURL: video.videoFiles![0].link.toString(),)));
+      },
+      child: Container(
+        color: Colors.transparent,
+        child: Card(
+          color: cardColor,
+          elevation: 10,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+          child: Column(
+            children: [_thumbnailCard(), _userCard()],
+          ),
         ),
       ),
     );

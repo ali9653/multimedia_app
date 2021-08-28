@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:multimedia_app/models/photos.dart';
 import 'package:multimedia_app/providers/photo_provider/photo_provider.dart';
 import 'package:multimedia_app/utils/colors.dart';
+import 'package:multimedia_app/utils/common_appbar.dart';
 import 'package:multimedia_app/utils/constants.dart';
 import 'package:multimedia_app/utils/custom_header_footer.dart';
 import 'package:multimedia_app/widgets/offline_card.dart';
@@ -33,15 +34,7 @@ class _PhotosViewState extends State<PhotosView> {
     return Consumer<PhotosProvider>(
       builder: (BuildContext context, photoProvider, Widget? child) {
         return Scaffold(
-          appBar: AppBar(
-            elevation: 2,
-            brightness: Brightness.dark,
-            backgroundColor: scaffoldColor,
-            title: Text(
-              "Photographs",
-              style: whiteW500.copyWith(fontSize: 22),
-            ),
-          ),
+          appBar: commonAppbar("Photographs"),
           backgroundColor: scaffoldColor,
           body: FutureBuilder(
               future: _photosFuture,

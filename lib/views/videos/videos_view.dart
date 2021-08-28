@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:multimedia_app/models/videos.dart';
 import 'package:multimedia_app/providers/video_provider/video_provider.dart';
 import 'package:multimedia_app/utils/colors.dart';
+import 'package:multimedia_app/utils/common_appbar.dart';
 import 'package:multimedia_app/utils/constants.dart';
 import 'package:multimedia_app/utils/custom_header_footer.dart';
 import 'package:multimedia_app/widgets/offline_card.dart';
@@ -32,15 +33,7 @@ class _VideosViewState extends State<VideosView> {
     return Consumer<VideosProvider>(
       builder: (BuildContext context, videoProvider, Widget? child) {
         return Scaffold(
-          appBar: AppBar(
-            elevation: 2,
-            brightness: Brightness.dark,
-            backgroundColor: scaffoldColor,
-            title: Text(
-              "Videos",
-              style: whiteW500.copyWith(fontSize: 22),
-            ),
-          ),
+          appBar: commonAppbar("Videos"),
           backgroundColor: scaffoldColor,
           body: FutureBuilder(
               future: _videosFuture,

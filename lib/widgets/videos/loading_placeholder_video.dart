@@ -22,7 +22,7 @@ class LoadingPlaceholderVideo extends StatelessWidget {
               height: ScreenUtils.deviceHeight(25),
             ),
             Positioned.fill(
-              bottom: 5,
+              bottom: 3,
               right: 5,
               left: 5,
               child: Align(

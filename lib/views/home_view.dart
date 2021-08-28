@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:multimedia_app/providers/home_provider.dart';
 import 'package:multimedia_app/utils/colors.dart';
-import 'package:multimedia_app/views/photos_view.dart';
-import 'package:multimedia_app/views/videos_view.dart';
+import 'package:multimedia_app/views/photos/photos_view.dart';
+import 'package:multimedia_app/views/videos/videos_view.dart';
 import 'package:provider/provider.dart';
 
 import 'Favourites/favourites_view.dart';
@@ -68,7 +68,7 @@ class _HomeViewState extends State<HomeView> {
                 backgroundColor: scaffoldColor,
                 type: BottomNavigationBarType.fixed,
                 unselectedItemColor: Colors.grey,
-                selectedItemColor: Colors.red,
+                selectedItemColor: Colors.red.shade700,
                 currentIndex: homeProvider.currentIndex,
                 items: [
                   _bottomButton(CupertinoIcons.photo_fill, "Photos"),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:multimedia_app/models/photos.dart';
 import 'package:multimedia_app/utils/colors.dart';
 import 'package:multimedia_app/utils/constants.dart';
+import 'package:multimedia_app/views/photos/detailed_photo_view.dart';
 
 class PhotoCard extends StatelessWidget {
   final Photo photo;
@@ -62,13 +63,19 @@ class PhotoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Card(
-        color: cardColor,
-        elevation: 10,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
-        child: Stack(
-          children: [_imageCard(), _photographerCard(), _favouriteIcon()],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DetailedPhotoView(photo: photo)));
+      },
+      child: Container(
+        color: Colors.transparent,
+        child: Card(
+          color: cardColor,
+          elevation: 10,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
+          child: Stack(
+            children: [_imageCard(), _photographerCard(), _favouriteIcon()],
+          ),
         ),
       ),
     );

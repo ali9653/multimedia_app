@@ -23,7 +23,7 @@ class VideoCard extends StatelessWidget {
             padding: EdgeInsets.all(10),
               decoration: new BoxDecoration(
                 shape: BoxShape.circle,
-               color: Colors.black.withOpacity(0.6)
+               color: Colors.black.withOpacity(0.8)
               ),
               child: Icon(Icons.play_arrow,color: Colors.white,size: 40,))),
     );

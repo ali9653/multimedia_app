@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:multimedia_app/utils/constants.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-CircularProgressIndicator loadingIndicator () {
-  return CircularProgressIndicator(strokeWidth: 3, valueColor: AlwaysStoppedAnimation<Color>(Colors.white));
+Widget loadingIndicator() {
+  return Lottie.asset("assets/images/loading_indicator.json", height: 40, width: 40, fit: BoxFit.cover, alignment: Alignment.center);
 }
 
 CustomFooter customFooter() {
@@ -34,13 +35,10 @@ CustomFooter customFooter() {
   );
 }
 
-CustomHeader customHeader () {
+CustomHeader customHeader() {
   return CustomHeader(
     builder: (context, mode) {
-      return Container(
-        height: 55,
-        child: Center(child: loadingIndicator())
-      );
+      return Container(alignment: Alignment.center, color: Colors.transparent, height: 55, child: loadingIndicator());
     },
   );
 }

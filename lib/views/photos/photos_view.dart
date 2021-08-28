@@ -4,14 +4,12 @@ import 'package:multimedia_app/models/photos.dart';
 import 'package:multimedia_app/providers/photo_provider/photo_provider.dart';
 import 'package:multimedia_app/utils/colors.dart';
 import 'package:multimedia_app/utils/common_appbar.dart';
-import 'package:multimedia_app/utils/constants.dart';
 import 'package:multimedia_app/utils/custom_header_footer.dart';
 import 'package:multimedia_app/widgets/offline_card.dart';
-import 'package:multimedia_app/widgets/photos/photo_card.dart';
 import 'package:multimedia_app/widgets/photos/loading_placeholder_images.dart';
+import 'package:multimedia_app/widgets/photos/photo_card.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:skeleton_text/skeleton_text.dart';
 
 class PhotosView extends StatefulWidget {
   const PhotosView({Key? key}) : super(key: key);
@@ -59,7 +57,7 @@ class _PhotosViewState extends State<PhotosView> {
                           Photo photo = photoProvider.photosList[index];
                           return PhotoCard(
                             photo: photo,
-                            onTapHeart: () => photoProvider.likeUnlike(index,context),
+                            onTapHeart: () => photoProvider.likeUnlike(index, context),
                           );
                         }),
                   );

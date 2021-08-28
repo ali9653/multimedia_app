@@ -12,11 +12,11 @@ import 'package:multimedia_app/views/Favourites/video_favourites.dart';
 class FavouritesView extends StatelessWidget {
   const FavouritesView({Key? key}) : super(key: key);
 
-  Widget _favouriteButton(IconData icon, String title, BuildContext context,VoidCallback onTap) {
+  Widget _favouriteButton(IconData icon, String title, BuildContext context, VoidCallback onTap) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       child: GestureDetector(
-        onTap: onTap ,
+        onTap: onTap,
         child: Card(
           elevation: 10,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -54,10 +54,10 @@ class FavouritesView extends StatelessWidget {
       backgroundColor: scaffoldColor,
       body: Column(
         children: [
-          _favouriteButton(CupertinoIcons.photo_fill, "Photos", context, () {
+          _favouriteButton(CupertinoIcons.photo_fill_on_rectangle_fill, "Photos", context, () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => FavouritePhotos()));
           }),
-          _favouriteButton(CupertinoIcons.play_rectangle_fill, "Videos", context, () {
+          _favouriteButton(Icons.video_collection, "Videos", context, () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => FavouriteVideos()));
           })
         ],

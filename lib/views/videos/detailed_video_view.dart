@@ -6,6 +6,7 @@ import 'package:multimedia_app/widgets/videos/video_player.dart';
 
 class DetailedVideoView extends StatefulWidget {
   final String videoURL;
+
   const DetailedVideoView({Key? key, required this.videoURL}) : super(key: key);
 
   @override
@@ -13,22 +14,15 @@ class DetailedVideoView extends StatefulWidget {
 }
 
 class _DetailedVideoViewState extends State<DetailedVideoView> {
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   void dispose() {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     SystemUiOverlayStyle systemUiOverlayStyle =
-    SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark, statusBarBrightness: Brightness.dark);
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark, statusBarBrightness: Brightness.dark);
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {

@@ -46,7 +46,6 @@ class _VideoPlayerState extends State<VideoPlayer> {
           wakelockEnabled: true,
           wakelockEnabledFullscreen: true,
           flickManager: flickManager,
-
         ),
       ),
     );
